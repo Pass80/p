@@ -1,5 +1,6 @@
 const data = [
     {
+        id: '1',
         img: 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80',
         name: 'Air',
         brand: 'Nike',
@@ -7,6 +8,7 @@ const data = [
         sizes: ['37', '38', '39'],
     },
     {
+        id: '2',
         img: 'https://images.unsplash.com/photo-1584735174965-48c48d7edfde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80',
         name: 'Dunk High Pro',
         brand: 'Nike',
@@ -14,6 +16,7 @@ const data = [
         sizes: ['37', '38', '39', '40', '42'],
     },
     {
+        id: '3',
         img: 'https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80',
         name: 'Old Skool',
         brand: 'Vans',
@@ -21,6 +24,7 @@ const data = [
         sizes: ['37'],
     },
     {
+        id: '4',
         img: 'https://images.unsplash.com/photo-1606890658317-7d14490b76fd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80',
         name: 'Summer Party',
         brand: 'Nike',
@@ -28,6 +32,7 @@ const data = [
         sizes: ['42', '43', '44', '45', '46'],
     },
     {
+        id: '5',
         img: 'https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80',
         name: 'Retro',
         brand: 'Adidas',
@@ -35,6 +40,7 @@ const data = [
         sizes: ['39', '40'],
     },
     {
+        id: '6',
         img: 'https://images.unsplash.com/photo-1528701800487-ba01fea498c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80',
         name: 'Fancy Doc',
         brand: 'Crocs',
@@ -42,6 +48,7 @@ const data = [
         sizes: ['37', '38', '39', '40', '41', '42'],
     },
     {
+        id: '7',
         img: 'https://images.unsplash.com/photo-1541597455068-49e3562bdfa4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80',
         name: 'Classic',
         brand: 'Reebok',
@@ -49,6 +56,7 @@ const data = [
         sizes: ['43', '44', '45', '46'],
     },
     {
+        id: '8',
         img: 'https://images.unsplash.com/photo-1628429437853-40ec8ebe3386?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80',
         name: 'Jungle',
         brand: 'New Balance',
@@ -56,6 +64,7 @@ const data = [
         sizes: ['39', '40', '41', '42'],
     },
     {
+        id: '9',
         img: 'https://images.unsplash.com/photo-1604163546180-039a1781c0d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80',
         name: 'Essentials',
         brand: 'Errant',
@@ -63,6 +72,7 @@ const data = [
         sizes: ['41', '42', '43', '44', '45', '46'],
     },
     {
+        id: '10',
         img: 'https://images.unsplash.com/photo-1571216332002-282dce467b32?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
         name: 'Très chic',
         brand: 'Nike',
@@ -70,6 +80,7 @@ const data = [
         sizes: ['45', '46'],
     },
     {
+        id: '11',
         img: 'https://images.unsplash.com/photo-1542601600647-3a722a90a76b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=706&q=80',
         name: 'Plastic Revolution',
         brand: 'Adidas',
@@ -77,6 +88,7 @@ const data = [
         sizes: ['37', '38', '39', '40'],
     },
     {
+        id: '12',
         img: 'https://images.unsplash.com/photo-1644001992668-3b9ed080533a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
         name: 'Sporty',
         brand: 'Asics',
@@ -84,8 +96,21 @@ const data = [
         sizes: ['41', '42', '43', '44'],
     },
 ];
+let tempCartItems;
+
+const cartItems = [];
+let cartBadge = 0;
 
 const galleryContainer = document.querySelector('.gallery-container');
+const submitBtn = document.querySelector('#submit');
+const txtInput = document.querySelector('#txt-input');
+const formContainer = document.querySelector('.form-container');
+const message = document.querySelector('.message');
+const acceptBtn = document.querySelector('.accept');
+const rejectBtn = document.querySelector('.reject');
+const modal = document.querySelector('.modal');
+const cartCounter = document.querySelector('.cart-counter');
+
 data.forEach((product) => {
     const productContainer = document.createElement('div');
     productContainer.classList.add('product-container');
@@ -99,9 +124,15 @@ data.forEach((product) => {
     const price = document.createElement('p');
     price.textContent = product.price;
     const brand = document.createElement('p');
+    brand.classList.add('more-details');
     brand.textContent = product.brand;
     const sizes = document.createElement('p');
-    sizes.textContent = product.sizes;
+    sizes.classList.add('more-details');
+    product.sizes.forEach((element) => {
+        const size = document.createElement('span');
+        size.textContent = element;
+        sizes.appendChild(size);
+    });
     const productInfo = document.createElement('div');
     productInfo.classList.add('product-info');
     productInfo.appendChild(name);
@@ -112,12 +143,46 @@ data.forEach((product) => {
     btnsContainer.classList.add('btns-container');
     const addBtn = document.createElement('button');
     addBtn.textContent = '+';
-    const showBtn = document.createElement('button');
-    showBtn.textContent = '^';
+    addBtn.addEventListener('click', () => {
+        if (cartItems.length === 0) {
+            cartItems.push({
+                id: product.id,
+                image: product.img,
+                name: product.name,
+                price: product.price,
+                amount: 1,
+            });
+        }
+        cartBadge += 1;
+        cartCounter.innerHTML = cartBadge;
+    });
+    const showBtn = document.createElement('img');
+    showBtn.src = 'assets/images/arrow.svg';
+    showBtn.addEventListener('click', () => {
+        showBtn.classList.toggle('arrow-direction');
+        brand.classList.toggle('more-details');
+        sizes.classList.toggle('more-details');
+    });
     btnsContainer.appendChild(addBtn);
     btnsContainer.appendChild(showBtn);
     detailsContainer.appendChild(productInfo);
     detailsContainer.appendChild(btnsContainer);
     productContainer.appendChild(detailsContainer);
     galleryContainer.appendChild(productContainer);
+});
+
+submitBtn.addEventListener('click', () => {
+    console.log(txtInput.value);
+    if (txtInput.value !== '' && txtInput.value.includes('@')) {
+        formContainer.style.display = 'none';
+        message.style.display = 'block';
+    } else return;
+});
+
+acceptBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+rejectBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
 });

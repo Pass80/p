@@ -8,6 +8,27 @@
         <title>Online-Shop</title>
     </head>
     <body>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <h2>WE USE COOKIES</h2>
+                <svg
+                    width="186"
+                    height="35"
+                    viewBox="0 0 186 35"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M84 3.97549C65.3333 8.30883 22.4 19.9755 0 31.9755C56.6667 37.3088 173.2 39.1755 186 3.97549C168 0.975492 122.4 -3.22451 84 3.97549Z"
+                        fill="#EBD96B"
+                    />
+                </svg>
+                <button class="btn accept">Accept</button>
+                <button class="btn reject">Reject all</button>
+            </div>
+        </div>
         <header>
             <nav>
                 <svg
@@ -75,6 +96,7 @@
                 <p>Live for influential and innovative fashions!</p>
                 <button>Shop now</button>
                 <div class="cart-container">
+                    <div class="cart-counter">0</div>
                     <svg
                         class="cart"
                         width="60"
@@ -93,7 +115,7 @@
         </header>
         <main>
             <section class="products-gallery">
-                <h2>New Arrivals</h2>
+                <h2 class="products-heading">New Arrivals</h2>
                 <svg
                     width="186"
                     height="35"
@@ -149,6 +171,10 @@
                         />
                         <input type="submit" value="SEND" id="submit" />
                     </form>
+                </div>
+                <div class="message">
+                    <h2>THANK YOU!</h2>
+                    <p>You will get our response shortly</p>
                 </div>
             </section>
         </main>

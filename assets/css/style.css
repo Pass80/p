@@ -7,6 +7,7 @@
 }
 
 html {
+    scroll-behavior: smooth;
     font-size: 62.5%;
     font-family: 'Poppins';
 }
@@ -43,7 +44,8 @@ nav ul {
     margin-right: 5rem;
 }
 
-nav a {
+nav a,
+.btn {
     display: inline-block;
     text-decoration: none;
     background-color: #000;
@@ -106,7 +108,7 @@ nav a {
 }
 
 .cart-container {
-    position: absolute;
+    position: fixed;
     background-color: #fbeda3;
     display: flex;
     align-items: center;
@@ -114,15 +116,42 @@ nav a {
     width: 10rem;
     height: 10rem;
     border-radius: 50%;
-    bottom: 0;
-    right: -4rem;
+    bottom: 5rem;
+    right: 5rem;
+    z-index: 2;
+}
+
+.cart-counter {
+    position: absolute;
+    top: -0.5rem;
+    left: -0.5rem;
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    background-color: #e5c643;
+    border-radius: 50%;
 }
 
 /* ===========GALLERY SECTION============= */
 
 .products-gallery {
+    position: relative;
     width: 90%;
     margin: 0 auto;
+}
+
+.products-gallery .products-heading {
+    position: relative;
+    font-size: 4rem;
+    padding: 8rem 0;
+    z-index: 1;
+}
+
+.products-gallery svg {
+    position: absolute;
+    width: 15rem;
+    top: 11rem;
+    left: 12rem;
 }
 
 .gallery-container {
@@ -155,6 +184,16 @@ nav a {
 .details-container p {
     color: #7f7f7f;
     font-size: 2rem;
+    padding-bottom: 1rem;
+}
+
+.details-container p span {
+    text-decoration: underline;
+    margin-right: 1.5rem;
+}
+
+.more-details {
+    display: none;
 }
 
 .btns-container {
@@ -165,11 +204,22 @@ nav a {
     gap: 1rem;
 }
 
+.btns-container img {
+    width: 2rem;
+    height: 2rem;
+    transition: all 0.2s ease-in;
+}
+.arrow-direction {
+    transform: rotate(180deg);
+    transition: all 0.2s ease-in;
+}
+
 .btns-container button {
     display: inline-block;
     padding-inline: 1rem;
-    font-size: 2rem;
+    font-size: 3rem;
     background-color: #fff;
+    color: #7f7f7f;
     border: none;
 }
 
@@ -205,9 +255,11 @@ nav a {
 
 .cta {
     background-color: #e5c643;
+    min-height: 45rem;
 }
 
-.form-container {
+.form-container,
+.message {
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -216,6 +268,19 @@ nav a {
     margin: 0 auto;
     padding: 10rem 0;
     color: #fff;
+}
+
+.message {
+    display: none;
+    text-align: center;
+}
+
+.message h2 {
+    font-size: 6rem;
+}
+
+.message p {
+    font-size: 2rem;
 }
 
 .form-container h2 {
@@ -240,6 +305,7 @@ nav a {
 #txt-input {
     width: 100%;
     height: 5rem;
+    padding-left: 2rem;
     background-color: #fff;
     border: none;
     border-radius: 0.8rem;
@@ -317,4 +383,60 @@ footer {
 
 .links-container ul li {
     padding: 1rem 0;
+}
+
+/* ===========MODAL WINDOW============= */
+/* The Modal (background) */
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(251, 237, 163, 0.5);
+    backdrop-filter: blur(7.5px);
+}
+
+/* Modal Content/Box */
+.modal-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background-color: #fbeda3;
+    padding: 20px;
+    border: none;
+}
+
+.modal-content h2 {
+    position: relative;
+    font-size: 3rem;
+    z-index: 1;
+}
+
+.modal-content svg {
+    position: absolute;
+    top: 5rem;
+    left: 10rem;
+}
+
+.accept,
+.reject {
+    display: inline-block;
+    border: none;
+    font-size: 2rem;
+    width: 14rem;
+    padding-block: 2rem;
+    border-radius: 1rem;
+}
+.accept {
+    margin-left: auto;
+}
+
+.reject {
+    background-color: #fff;
+    color: #000;
 }
