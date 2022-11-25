@@ -98,7 +98,7 @@ const data = [
 ];
 let tempCartItems;
 
-const cartItems = [];
+let cartItems = [];
 let cartBadge = 0;
 
 const galleryContainer = document.querySelector('.gallery-container');
@@ -110,6 +110,12 @@ const acceptBtn = document.querySelector('.accept');
 const rejectBtn = document.querySelector('.reject');
 const modal = document.querySelector('.modal');
 const cartCounter = document.querySelector('.cart-counter');
+const cartModal = document.querySelector('.cart-modal');
+const cartContent = document.querySelector('.cart-content');
+const closeBtn = document.querySelector('.close');
+const closeEmptyBtn = document.querySelector('.close-empty');
+const cartIcon = document.querySelector('.cart-container');
+const emptyCartModal = document.querySelector('.empty-cart');
 
 data.forEach((product) => {
     const productContainer = document.createElement('div');
@@ -142,6 +148,7 @@ data.forEach((product) => {
     const btnsContainer = document.createElement('div');
     btnsContainer.classList.add('btns-container');
     const addBtn = document.createElement('button');
+    addBtn.classList.add('add-btn');
     addBtn.textContent = '+';
     addBtn.addEventListener('click', () => {
         if (cartItems.length === 0) {
@@ -152,13 +159,47 @@ data.forEach((product) => {
                 price: product.price,
                 amount: 1,
             });
+        } else if (
+            cartItems.filter((item) => item.id === product.id).length > 0
+        ) {
+            cartItems = cartItems.map((item) => {
+                if (item.id === product.id) {
+                    return {
+                        ...item,
+                        amount: item.amount + 1,
+                    };
+                } else {
+                    return item;
+                }
+            });
+        } else {
+            cartItems.push({
+                id: product.id,
+                image: product.img,
+                name: product.name,
+                price: product.price,
+                amount: 1,
+            });
         }
         cartBadge += 1;
         cartCounter.innerHTML = cartBadge;
+        console.log(cartItems);
+        cartContent.innerHTML = '';
+        cartItems.forEach((item) => {
+            const itemContainer = document.createElement('div');
+            const itemName = document.createElement('p');
+            itemName.textContent = item.name;
+            const itemPrice = document.createElement('p');
+            itemPrice.textContent = item.price;
+            itemContainer.appendChild(itemName);
+            itemContainer.appendChild(itemPrice);
+            cartContent.appendChild(itemContainer);
+        });
     });
     const showBtn = document.createElement('img');
     showBtn.src = 'assets/images/arrow.svg';
     showBtn.addEventListener('click', () => {
+        showBtn.classList.add('show-details');
         showBtn.classList.toggle('arrow-direction');
         brand.classList.toggle('more-details');
         sizes.classList.toggle('more-details');
@@ -185,4 +226,18 @@ acceptBtn.addEventListener('click', () => {
 
 rejectBtn.addEventListener('click', () => {
     modal.style.display = 'none';
+});
+
+closeBtn.addEventListener('click', () => {
+    cartModal.style.display = 'none';
+});
+
+closeEmptyBtn.addEventListener('click', () => {
+    emptyCartModal.style.display = 'none';
+});
+
+cartIcon.addEventListener('click', () => {
+    if (cartItems.length === 0) {
+        emptyCartModal.style.display = 'block';
+    } else cartModal.style.display = 'block';
 });
