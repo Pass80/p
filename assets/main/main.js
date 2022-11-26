@@ -97,7 +97,7 @@ const data = [
     },
 ];
 let tempCartItems;
-
+let cookies = false;
 let cartItems = [];
 let cartBadge = 0;
 
@@ -116,6 +116,7 @@ const closeBtn = document.querySelector('.close');
 const closeEmptyBtn = document.querySelector('.close-empty');
 const cartIcon = document.querySelector('.cart-container');
 const emptyCartModal = document.querySelector('.empty-cart');
+const cartTotal = document.querySelector('.total-price');
 
 data.forEach((product) => {
     const productContainer = document.createElement('div');
@@ -189,12 +190,21 @@ data.forEach((product) => {
             const itemContainer = document.createElement('div');
             const itemName = document.createElement('p');
             itemName.textContent = item.name;
+            const itemAmount = document.createElement('p');
+            itemAmount.textContent = `${item.amount} X`;
             const itemPrice = document.createElement('p');
             itemPrice.textContent = item.price;
             itemContainer.appendChild(itemName);
+            itemContainer.appendChild(itemAmount);
             itemContainer.appendChild(itemPrice);
             cartContent.appendChild(itemContainer);
         });
+        const initialValue = 0;
+        const totalPrice = cartItems.reduce((accum, item) => {
+            const convertedPrice = +item.price.slice(0, item.price.length - 5);
+            return accum + item.amount * convertedPrice;
+        }, initialValue);
+        cartTotal.innerHTML = `${totalPrice} $`;
     });
     const showBtn = document.createElement('img');
     showBtn.src = 'assets/images/arrow.svg';
@@ -222,10 +232,12 @@ submitBtn.addEventListener('click', () => {
 
 acceptBtn.addEventListener('click', () => {
     modal.style.display = 'none';
+    localStorage.setItem('cookies', 'true');
 });
 
 rejectBtn.addEventListener('click', () => {
     modal.style.display = 'none';
+    localStorage.setItem('cookies', 'false');
 });
 
 closeBtn.addEventListener('click', () => {
@@ -241,3 +253,16 @@ cartIcon.addEventListener('click', () => {
         emptyCartModal.style.display = 'block';
     } else cartModal.style.display = 'block';
 });
+
+// create a function to check if the cookies are enabled or not and show the cookies modal conditionally
+
+const checkCookies = () => {
+    cookies = localStorage.getItem('cookies');
+    if (cookies === 'true') {
+        modal.style.display = 'none';
+    } else {
+        modal.style.display = 'block';
+    }
+};
+
+checkCookies();

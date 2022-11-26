@@ -393,7 +393,7 @@ footer {
 /* ===========MODAL WINDOW============= */
 /* The Modal (background) */
 .modal {
-    display: block;
+    display: none;
     position: fixed;
     z-index: 10;
     left: 0;
@@ -496,6 +496,11 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.cart-content div p:nth-of-type(2) {
+    margin-left: auto;
+    margin-right: 1rem;
 }
 .total-container {
     padding-bottom: 2rem;
