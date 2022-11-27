@@ -26,6 +26,7 @@ header {
 }
 
 nav {
+    position: relative;
     display: flex;
     align-items: center;
     width: 90%;
@@ -42,6 +43,12 @@ nav ul {
     margin-left: auto;
     gap: 5rem;
     margin-right: 5rem;
+}
+
+.burger-menu {
+    display: none;
+    width: 4rem;
+    height: 4rem;
 }
 
 nav a,
@@ -123,6 +130,9 @@ nav a,
 
 .cart-counter {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     top: -0.5rem;
     left: -0.5rem;
     width: 3rem;
@@ -531,4 +541,164 @@ footer {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+/* ===========QUERY MEDIA============= */
+
+@media only screen and (max-width: 1150px) {
+    nav svg {
+        width: 14rem;
+    }
+
+    nav h3 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        gap: 2rem;
+        margin-right: 2rem;
+    }
+
+    nav ul li {
+        font-size: 1.5rem;
+        gap: 1rem;
+        margin-right: 2rem;
+    }
+
+    nav a {
+        font-size: 1.5rem;
+        padding: 0.5rem 1rem;
+    }
+    .heading-container h1 {
+        font-size: 4rem;
+    }
+
+    .heading-container .white,
+    .heading-container .yellow {
+        width: 25rem;
+    }
+
+    .heading-container .white {
+        top: -4rem;
+    }
+
+    .heading-container .yellow {
+        top: 8rem;
+    }
+
+    .heading-container p {
+        font-size: 1rem;
+        width: 40%;
+    }
+
+    .hero-section button {
+        padding: 0.5rem 1rem;
+        font-size: 2rem;
+    }
+    .gallery-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .form-container p {
+        font-size: 1.5rem;
+    }
+
+    .form-container form {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    nav .burger-menu {
+        display: 'block';
+    }
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 7rem;
+        right: 0rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+        list-style-type: none;
+        margin-left: 0;
+        gap: 2rem;
+        margin-right: 0;
+        z-index: 1;
+    }
+
+    nav ul li {
+        margin-right: 0;
+    }
+
+    nav a {
+        margin-left: auto;
+        margin-right: 2rem;
+    }
+    .hero-section {
+        background-position: -30rem;
+    }
+
+    .cart-container {
+        width: 7rem;
+        height: 7rem;
+        bottom: 3rem;
+        right: 3rem;
+    }
+
+    .cart-counter {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .cart {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .mobile-app h2 {
+        font-size: 2.5rem;
+    }
+    .app-info-container {
+        text-align: center;
+    }
+
+    .media-container h3 {
+        font-size: 2rem;
+    }
+
+    .media-container p {
+        font-size: 1rem;
+    }
+
+    .links-container ul {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+
+    .mobile-app {
+        flex-direction: column-reverse;
+    }
+
+    .form-container form {
+        width: 90%;
+    }
+
+    .footer-container {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .media-container {
+        width: 70%;
+        padding-top: 2rem;
+        text-align: center;
+    }
 }
