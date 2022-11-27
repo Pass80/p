@@ -45,7 +45,16 @@ nav ul {
     margin-right: 5rem;
 }
 
+.show {
+    display: flex;
+}
+
+nav ul li {
+    cursor: pointer;
+}
+
 .burger-menu {
+    cursor: pointer;
     display: none;
     width: 4rem;
     height: 4rem;
@@ -126,6 +135,7 @@ nav a,
     bottom: 5rem;
     right: 5rem;
     z-index: 2;
+    cursor: pointer;
 }
 
 .cart-counter {
@@ -601,6 +611,7 @@ footer {
 
     .form-container p {
         font-size: 1.5rem;
+        text-align: center;
     }
 
     .form-container form {
@@ -609,19 +620,22 @@ footer {
 }
 
 @media only screen and (max-width: 780px) {
-    nav .burger-menu {
-        display: 'block';
+    .burger-menu {
+        display: block;
     }
     nav ul {
-        display: none;
+        width: 30%;
         position: absolute;
         top: 7rem;
         right: 0rem;
-        display: flex;
+        display: none;
         flex-direction: column;
         align-items: flex-end;
         justify-content: flex-end;
-        list-style-type: none;
+        background-color: #fff;
+        opacity: 0.9;
+        border-radius: 1rem;
+        padding-block: 2rem;
         margin-left: 0;
         gap: 2rem;
         margin-right: 0;
@@ -630,6 +644,7 @@ footer {
 
     nav ul li {
         margin-right: 0;
+        padding-inline: 1rem;
     }
 
     nav a {
@@ -675,6 +690,15 @@ footer {
     .links-container ul {
         font-size: 1rem;
     }
+
+    .modal-content .btn {
+        font-size: 1.5rem;
+        width: fit-content;
+    }
+
+    .cart-modal {
+        width: 60%;
+    }
 }
 
 @media only screen and (max-width: 650px) {
@@ -700,5 +724,20 @@ footer {
         width: 70%;
         padding-top: 2rem;
         text-align: center;
+    }
+
+    .modal-content h2 {
+        font-size: 2rem;
+        /* padding: 0.5rem 1rem; */
+        width: fit-content;
+    }
+    .modal-content svg {
+        width: 10rem;
+        top: 4rem;
+        left: 9rem;
+    }
+
+    .cart-modal {
+        width: 80%;
     }
 }

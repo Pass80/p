@@ -117,6 +117,8 @@ const closeEmptyBtn = document.querySelector('.close-empty');
 const cartIcon = document.querySelector('.cart-container');
 const emptyCartModal = document.querySelector('.empty-cart');
 const cartTotal = document.querySelector('.total-price');
+const burgerMenu = document.querySelector('.burger-menu');
+const navList = document.querySelector('.nav-list');
 
 data.forEach((product) => {
     const productContainer = document.createElement('div');
@@ -252,6 +254,10 @@ cartIcon.addEventListener('click', () => {
     if (cartItems.length === 0) {
         emptyCartModal.style.display = 'block';
     } else cartModal.style.display = 'block';
+});
+
+burgerMenu.addEventListener('click', () => {
+    navList.classList.toggle('show');
 });
 
 // create a function to check if the cookies are enabled or not and show the cookies modal conditionally
