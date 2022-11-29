@@ -97,7 +97,7 @@ const data = [
     },
 ];
 let tempCartItems;
-let cookies = false;
+let cookies;
 let cartItems = [];
 let cartBadge = 0;
 
@@ -190,12 +190,15 @@ data.forEach((product) => {
         cartContent.innerHTML = '';
         cartItems.forEach((item) => {
             const itemContainer = document.createElement('div');
+            const itemImage = document.createElement('img');
+            itemImage.src = item.image;
             const itemName = document.createElement('p');
             itemName.textContent = item.name;
             const itemAmount = document.createElement('p');
             itemAmount.textContent = `${item.amount} X`;
             const itemPrice = document.createElement('p');
             itemPrice.textContent = item.price;
+            itemContainer.appendChild(itemImage);
             itemContainer.appendChild(itemName);
             itemContainer.appendChild(itemAmount);
             itemContainer.appendChild(itemPrice);

@@ -225,7 +225,8 @@ nav a,
 }
 
 .add-btn:hover,
-.show-details:hover {
+.show-details:hover,
+.btns-container img:hover {
     cursor: pointer;
 }
 
@@ -516,6 +517,14 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.cart-content div img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    margin-right: 2rem;
 }
 
 .cart-content div p:nth-of-type(2) {
@@ -527,11 +536,9 @@ footer {
     width: 85%;
     margin: 0 auto;
 }
-
 .total-container p:nth-of-type(2) {
     margin-right: 2rem;
 }
-
 /* The Close Button */
 .close,
 .close-empty {
@@ -543,7 +550,6 @@ footer {
     font-size: 28px;
     font-weight: bold;
 }
-
 .close:hover,
 .close:focus,
 .close-empty:hover,
@@ -559,22 +565,18 @@ footer {
     nav svg {
         width: 14rem;
     }
-
     nav h3 {
         font-size: 2rem;
     }
-
     nav ul {
         gap: 2rem;
         margin-right: 2rem;
     }
-
     nav ul li {
         font-size: 1.5rem;
         gap: 1rem;
         margin-right: 2rem;
     }
-
     nav a {
         font-size: 1.5rem;
         padding: 0.5rem 1rem;
@@ -582,25 +584,23 @@ footer {
     .heading-container h1 {
         font-size: 4rem;
     }
-
     .heading-container .white,
     .heading-container .yellow {
         width: 25rem;
     }
-
     .heading-container .white {
         top: -4rem;
     }
-
     .heading-container .yellow {
         top: 8rem;
     }
-
     .heading-container p {
         font-size: 1rem;
         width: 40%;
     }
-
+    .hero-section p {
+        margin-top: 12rem;
+    }
     .hero-section button {
         padding: 0.5rem 1rem;
         font-size: 2rem;
@@ -608,14 +608,15 @@ footer {
     .gallery-container {
         grid-template-columns: 1fr 1fr;
     }
-
     .form-container p {
         font-size: 1.5rem;
         text-align: center;
     }
-
     .form-container form {
         width: 60%;
+    }
+    .cart-modal {
+        width: 50%;
     }
 }
 
@@ -641,91 +642,78 @@ footer {
         margin-right: 0;
         z-index: 1;
     }
-
     nav ul li {
         margin-right: 0;
         padding-inline: 1rem;
     }
-
     nav a {
         margin-left: auto;
         margin-right: 2rem;
     }
-    .hero-section {
-        background-position: -30rem;
-    }
-
     .cart-container {
         width: 7rem;
         height: 7rem;
         bottom: 3rem;
         right: 3rem;
     }
-
     .cart-counter {
         width: 3rem;
         height: 3rem;
     }
-
     .cart {
         width: 3rem;
         height: 3rem;
     }
-
     .mobile-app h2 {
         font-size: 2.5rem;
     }
     .app-info-container {
         text-align: center;
     }
-
     .media-container h3 {
         font-size: 2rem;
     }
-
     .media-container p {
         font-size: 1rem;
     }
-
     .links-container ul {
         font-size: 1rem;
     }
-
     .modal-content .btn {
         font-size: 1.5rem;
         width: fit-content;
     }
-
     .cart-modal {
-        width: 60%;
+        width: 70%;
     }
 }
 
 @media only screen and (max-width: 650px) {
+    .hero-section {
+        background-position: -70rem;
+    }
+    .hero-section p {
+        margin-top: 24rem;
+    }
     .gallery-container {
         grid-template-columns: 1fr;
     }
-
     .mobile-app {
         flex-direction: column-reverse;
     }
-
     .form-container form {
         width: 90%;
     }
-
     .footer-container {
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
     }
-
     .media-container {
         width: 70%;
         padding-top: 2rem;
         text-align: center;
     }
-
     .modal-content h2 {
         font-size: 2rem;
         /* padding: 0.5rem 1rem; */
@@ -736,7 +724,6 @@ footer {
         top: 4rem;
         left: 9rem;
     }
-
     .cart-modal {
         width: 80%;
     }
