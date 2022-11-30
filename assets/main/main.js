@@ -186,7 +186,6 @@ data.forEach((product) => {
         }
         cartBadge += 1;
         cartCounter.innerHTML = cartBadge;
-        console.log(cartItems);
         cartContent.innerHTML = '';
         cartItems.forEach((item) => {
             const itemContainer = document.createElement('div');
@@ -228,7 +227,6 @@ data.forEach((product) => {
 });
 
 submitBtn.addEventListener('click', () => {
-    console.log(txtInput.value);
     if (txtInput.value !== '' && txtInput.value.includes('@')) {
         formContainer.style.display = 'none';
         message.style.display = 'block';
