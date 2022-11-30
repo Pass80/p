@@ -537,7 +537,7 @@ footer {
     margin: 0 auto;
 }
 .total-container p:nth-of-type(2) {
-    margin-right: 2rem;
+    /* margin-right: 2rem; */
 }
 /* The Close Button */
 .close,
@@ -690,7 +690,9 @@ footer {
 
 @media only screen and (max-width: 650px) {
     .hero-section {
-        background-position: -70rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: right -32rem bottom 0;
     }
     .hero-section p {
         margin-top: 24rem;
