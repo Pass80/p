@@ -738,4 +738,8 @@ footer {
     .empty-cart h3 {
         font-size: 2rem;
     }
+    .accept,
+    .reject {
+        font-size: 1rem;
+    }
 }
