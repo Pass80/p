@@ -120,6 +120,33 @@ const cartTotal = document.querySelector('.total-price');
 const burgerMenu = document.querySelector('.burger-menu');
 const navList = document.querySelector('.nav-list');
 
+const calculateTotalAmount = (array) => {
+    const initialValue = 0;
+    const totalPrice = array.reduce((accum, item) => {
+        const convertedPrice = +item.price.slice(0, item.price.length - 5);
+        return accum + item.amount * convertedPrice;
+    }, initialValue);
+    cartTotal.innerHTML = `${totalPrice} $`;
+};
+
+const incrementItems = (element, array) => {
+    element.amount += 1;
+    cartBadge += 1;
+    cartCounter.innerHTML = cartBadge;
+    calculateTotalAmount(array);
+};
+
+const decrementItems = (element, array) => {
+    if (element.amount === 1) {
+        array.splice(array.indexOf(element), 1);
+    } else {
+        element.amount -= 1;
+    }
+    cartBadge -= 1;
+    cartCounter.innerHTML = cartBadge;
+    calculateTotalAmount(array);
+};
+
 data.forEach((product) => {
     const productContainer = document.createElement('div');
     productContainer.classList.add('product-container');
@@ -193,12 +220,36 @@ data.forEach((product) => {
             itemImage.src = item.image;
             const itemName = document.createElement('p');
             itemName.textContent = item.name;
+            const incrementItem = document.createElement('span');
+            incrementItem.textContent = '+';
+            incrementItem.addEventListener('click', () => {
+                incrementItems(item, cartItems);
+                itemAmount.textContent = `${item.amount} X`;
+            });
+            const decrementItem = document.createElement('span');
+            decrementItem.textContent = '-';
+            decrementItem.addEventListener('click', () => {
+                decrementItems(item, cartItems);
+                if (
+                    cartItems.filter((element) => element.id === item.id)
+                        .length === 0
+                ) {
+                    cartContent.removeChild(itemContainer);
+                }
+                itemAmount.textContent = `${item.amount} X`;
+                if (cartItems.length === 0) {
+                    cartModal.style.display = 'none';
+                    emptyCartModal.style.display = 'block';
+                }
+            });
             const itemAmount = document.createElement('p');
             itemAmount.textContent = `${item.amount} X`;
             const itemPrice = document.createElement('p');
             itemPrice.textContent = item.price;
             itemContainer.appendChild(itemImage);
             itemContainer.appendChild(itemName);
+            itemContainer.appendChild(incrementItem);
+            itemContainer.appendChild(decrementItem);
             itemContainer.appendChild(itemAmount);
             itemContainer.appendChild(itemPrice);
             cartContent.appendChild(itemContainer);

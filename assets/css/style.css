@@ -490,6 +490,22 @@ footer {
     display: none;
 }
 
+.cart-content span {
+    display: inline-block;
+    width: 2rem;
+    text-align: center;
+    background-color: #e5c643;
+    border: 1px solid black;
+}
+.cart-content span:hover {
+    cursor: pointer;
+    background-color: #c5a30b;
+}
+.cart-content span:nth-of-type(1) {
+    margin-left: auto;
+    border-right: none;
+}
+
 .empty-cart {
     display: none;
 }
@@ -528,7 +544,7 @@ footer {
 }
 
 .cart-content div p:nth-of-type(2) {
-    margin-left: auto;
+    margin-left: 1rem;
     margin-right: 1rem;
 }
 .total-container {
@@ -536,9 +552,7 @@ footer {
     width: 85%;
     margin: 0 auto;
 }
-.total-container p:nth-of-type(2) {
-    /* margin-right: 2rem; */
-}
+
 /* The Close Button */
 .close,
 .close-empty {
