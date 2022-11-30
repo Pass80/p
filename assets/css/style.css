@@ -618,6 +618,9 @@ footer {
     .cart-modal {
         width: 50%;
     }
+    .empty-cart {
+        width: 70%;
+    }
 }
 
 @media only screen and (max-width: 780px) {
@@ -728,5 +731,11 @@ footer {
     }
     .cart-modal {
         width: 80%;
+    }
+    .empty-cart {
+        width: 80%;
+    }
+    .empty-cart h3 {
+        font-size: 2rem;
     }
 }
