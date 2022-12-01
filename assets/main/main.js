@@ -120,6 +120,7 @@ const cartTotal = document.querySelector('.total-price');
 const burgerMenu = document.querySelector('.burger-menu');
 const navList = document.querySelector('.nav-list');
 
+//  eine Funktion, die die Gesamtmenge der Artikel im Warenkorb berechnet
 const calculateTotalAmount = (array) => {
     const initialValue = 0;
     const totalPrice = array.reduce((accum, item) => {
@@ -128,14 +129,14 @@ const calculateTotalAmount = (array) => {
     }, initialValue);
     cartTotal.innerHTML = `${totalPrice} $`;
 };
-
+// eine Funktion, die den Artikel im Warenkorb um eins erhöht
 const incrementItems = (element, array) => {
     element.amount += 1;
     cartBadge += 1;
     cartCounter.innerHTML = cartBadge;
     calculateTotalAmount(array);
 };
-
+// eine Funktion, die den Artikel im Warenkorb um eins verringert
 const decrementItems = (element, array) => {
     if (element.amount === 1) {
         array.splice(array.indexOf(element), 1);
@@ -146,7 +147,7 @@ const decrementItems = (element, array) => {
     cartCounter.innerHTML = cartBadge;
     calculateTotalAmount(array);
 };
-
+// Karten für alle Produkte in der Datenbank erstellen und im DOM anzeigen
 data.forEach((product) => {
     const productContainer = document.createElement('div');
     productContainer.classList.add('product-container');
@@ -180,6 +181,7 @@ data.forEach((product) => {
     const addBtn = document.createElement('button');
     addBtn.classList.add('add-btn');
     addBtn.textContent = '+';
+    // Hinzufügen eines event-Listener zum Add-Button. Mit jedem Klick wird das Element zum cartItems-Array hinzugefügt.
     addBtn.addEventListener('click', () => {
         if (cartItems.length === 0) {
             cartItems.push({
@@ -214,6 +216,7 @@ data.forEach((product) => {
         cartBadge += 1;
         cartCounter.innerHTML = cartBadge;
         cartContent.innerHTML = '';
+        // Erstellen der DOM-Elemente, die im cart modal window angezeigt werden sollen
         cartItems.forEach((item) => {
             const itemContainer = document.createElement('div');
             const itemImage = document.createElement('img');
@@ -312,7 +315,7 @@ burgerMenu.addEventListener('click', () => {
     navList.classList.toggle('show');
 });
 
-// create a function to check if the cookies are enabled or not and show the cookies modal conditionally
+// Erstellen einer Funktion, um zu überprüfen, ob Cookies aktiviert sind oder nicht, und um die Cookies modal bedingt anzuzeigen
 
 const checkCookies = () => {
     cookies = localStorage.getItem('cookies');
