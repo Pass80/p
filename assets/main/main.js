@@ -247,8 +247,10 @@ data.forEach((product) => {
             });
             const itemAmount = document.createElement('p');
             itemAmount.textContent = `${item.amount} X`;
+            itemAmount.classList.add('item-amount');
             const itemPrice = document.createElement('p');
             itemPrice.textContent = item.price;
+            itemPrice.classList.add('item-price');
             itemContainer.appendChild(itemImage);
             itemContainer.appendChild(itemName);
             itemContainer.appendChild(incrementItem);

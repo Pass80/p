@@ -471,7 +471,7 @@ footer {
 
 .cart-modal,
 .empty-cart {
-    width: 40%;
+    width: 45%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -496,6 +496,15 @@ footer {
     text-align: center;
     background-color: #e5c643;
     border: 1px solid black;
+}
+.item-amount {
+    width: 8%;
+}
+.item-price {
+    width: 15%;
+}
+.total-price {
+    width: 15%;
 }
 .cart-content span:hover {
     cursor: pointer;
@@ -630,7 +639,7 @@ footer {
         width: 60%;
     }
     .cart-modal {
-        width: 50%;
+        width: 65%;
     }
     .empty-cart {
         width: 70%;
